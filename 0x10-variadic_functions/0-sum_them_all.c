@@ -9,14 +9,14 @@
   * Return: If n == 0 - 0.
   * Otherwise - the sum of all parameters.
   **/
-        int sum_them_all(const unsigned int n, ...)
+      int sum_them_all(const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i, sum = 0;
 
-	va_start(ap, a);
+	va_start(ap, n);
 
-	for (i = 0; i < a; i++)
+	for (i = 0; i < n; i++)
 		sum += va_arg(ap, int);
 
 	va_end(ap);
@@ -24,12 +24,4 @@
 	return (sum);
 }
 
-}
-
-int main() {
-    int result = sum_them_all(5, 1, 2, 3, 4, 5);
-    printf("Sum: %d\n", result); // Output: Sum: 15
-
-    return 0;
-}
 
